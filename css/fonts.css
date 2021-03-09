@@ -1,0 +1,45 @@
+/*
+*	Montserrat
+*	Designed by Julieta Ulanovsky, Sol Matas, Juan Pablo del Peral, Jacques Le Bailly
+*	License: OFL (https://fonts.google.com/specimen/Montserrat?preview.text_type=custom#license)
+*/
+
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url(../webfonts/Montserrat/Montserrat-Light.ttf) format('woff2');
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(../webfonts/Montserrat/Montserrat-Regular.ttf) format('woff2');
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(../webfonts/Montserrat/Montserrat-Medium.ttf) format('woff2');
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(../webfonts/Montserrat/Montserrat-Bold.ttf) format('woff2');
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: url(../webfonts/Montserrat/Montserrat-Black.ttf) format('woff2');
+}

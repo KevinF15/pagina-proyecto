@@ -1,0 +1,787 @@
+@import url("fonts.css");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    /*grid-gap: 10px;*/
+
+    grid-template-areas: "announce announce announce"
+                         "header header header"
+                         "banner banner banner"
+                         "main main main"
+                         "footer footer footer"
+                         "copy copy copy";
+}
+
+.announce {
+    background: #003299;
+    color: #FFFFFF;
+    font-size: 11pt;
+    line-height: 38px;
+    padding: 0 50px;
+    z-index: 3;
+
+    grid-area: announce;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.announce .fas, .announce a {
+    margin-right: 5px;
+}
+.announce .social {
+    justify-self: right;
+}
+
+/*********************
+*       HEADER
+*********************/
+
+#header {
+    background: #FFFFFF;
+    padding: 10px 50px;
+    z-index: 2;
+
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+}
+
+#header .logo {
+    justify-self: center;
+}
+
+#header .logo img {
+    width: 65px;
+}
+
+#header .logo:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: -30px;
+    border: 50px solid #FFFFFF;
+    border-radius: 100px;
+    z-index: -1;
+}
+
+/*********************
+*     NAVIGATION
+*********************/
+
+.navigation {
+    align-self: center;
+}
+
+.nav-right {
+    justify-self: right;
+}
+
+.nav-left {
+    justify-self: left;
+}
+
+.navigation a {
+    color:#292c2f;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 17px 32px;
+    transition: all ease 0.3s;
+}
+
+.navigation a.active {
+    color: #023398;
+}
+
+.navigation a:hover {
+    color: #003299;
+}
+
+/*------ DROPDOWN-MENUS ------*/
+
+.dropdown-menu {
+    display: inline-block;
+}
+
+.dropdown-menu .fas {
+   font-size: 9pt;
+}
+
+.dropdown-menu:hover .content {
+  display: block;
+}
+
+.dropdown-menu .content {
+    display: none;
+    position: absolute;
+    background: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu .content a {
+    display: block;
+    margin: 20px;
+}
+
+
+/*------ TOGGLE NAVIGATION ------*/
+
+.tggnav {
+    display: none;
+    padding: 8px;
+    align-self: center;
+    color: #000;
+    font-size: 18pt;
+}
+
+#tgg-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+    
+    background: rgba(0, 50, 152, 0.8);
+    z-index: 5;
+    color: #FFF;
+    text-align: center;
+}
+
+#tgg-nav .wrap {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    align-self: center;
+    align-items: center;
+}
+
+#tgg-nav .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px 35px;
+    font-size: 16pt;
+    color: #FFF;
+}
+
+#tgg-nav .content {
+    display: inline-block;
+    margin: 60px;
+}
+
+#tgg-nav .content a {
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+    margin: 20px;
+    padding: 10px;
+    font-size: 14pt;
+    border-bottom: 1px dashed #FFF;
+}
+
+/*********************
+*       BANNER
+*********************/
+
+#banner, #banner-migsoft{
+    grid-area: banner;
+    text-align: center;
+    color: #FFF;
+    height: 150px;
+    padding: 100px;
+}
+
+#banner {
+    background: #003097 url('../images/banner.jpg');
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#banner-migsoft {
+    background: url('../images/banner2.jpg');
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    box-shadow: inset 0px 0px 24px 5px rgba(10, 40, 99, 0.4);
+}
+
+#banner hr {
+    border: 1px solid rgb(211, 211, 211, 0.8);
+    width: 220px;
+}
+
+/*********************
+*       CONTENT
+*********************/
+
+#main {
+    grid-area: main;
+}
+
+/*------ SECTIONS ------*/
+
+#main .sectitle {
+    color: #333333;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px;
+    width: 500px;
+    margin: 0;
+    margin-top: 25px;
+    /*border-bottom: 1px dashed #A8A8A8;*/
+}
+
+#main .sectitle p {
+    margin: 5px;
+    font-size: 11pt;
+    font-weight: 500;
+    text-transform: none;
+    color: #888B9A;
+}
+
+#main .sec {
+    text-align: justify;
+    margin-bottom: 25px;
+    padding: 25px 100px;
+}
+
+
+/*------ About us ------*/
+
+#main .us {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 30px;
+}
+
+#main .us img.univf {
+    width: 300px;
+}
+
+/*------ Mision & Vision ------*/
+
+@keyframes zoomit {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+#main .misvis {
+    background: url(../images/container_bg.png) left top repeat;
+    color: #FFF;
+    margin: 0;
+    -webkit-box-shadow: inset 0px 0px 24px 5px rgba(10, 40, 99, 0.15); 
+    box-shadow: inset 0px 0px 24px 5px rgba(10, 40, 99, 0.2);
+
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+}
+
+#main .misvis h3 {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid #FFF;
+    border-radius: 50px;
+    padding: 10px 25px;
+    text-align: center;
+}
+
+#main .misvis div {
+    justify-self: start;
+    text-align: justify;
+}
+
+#main .misvis .separator {
+    border-radius: 100px;
+    width: 100px;
+    justify-self: center;
+    align-self: center;
+}
+
+#main .misvis .separator img {
+    animation: zoomit infinite 3s alternate;
+    width: 150px;
+}
+
+#main .misvis:hover h3 {
+    background-color: #FFF;
+    color: #1345AC;
+    transition: all ease 0.3s;
+}
+
+/*------ Ranking ------*/
+
+#main .ranking {
+    background: #FF9300;
+    color: #FFF;
+    text-align: center;
+    font-size: 15pt;
+    padding: 30px;
+}
+
+#main .ranking h1 {
+    border: 2px solid #FFF;
+    border-radius: 50px;
+    padding: 25px;
+    font-size: 30pt;
+    margin: 0;
+}
+
+#main .ranking:hover h1 {
+    background: #FFF;
+    color: #FF9300;
+    transition: all ease 0.3s;
+}
+
+/*------ Ubication ------*/
+
+#main .ubic small {
+    color: #575757;
+}
+
+/*------ eBooks ------*/
+
+#main .ebooks {
+    text-align: center;
+}
+
+.ebook {
+    width: 400px;
+    height: 228px;
+    margin: 15px;
+    box-shadow: 0 2px 7px 0 rgb(0 0 0 / 26%);
+    cursor: pointer;
+
+    display: inline-grid;
+    grid-template-columns: 2fr 4fr;
+
+}
+
+.ebook:hover {
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 26%);
+    transition: all ease 0.3s;
+}
+
+.ebook img {
+    width: 150px;
+}
+
+.ebook p {
+    font-size: 9pt;
+    text-align: justify;
+    margin: 10px;
+}
+
+/*------ Comming soon ------*/
+
+#main h3.commingsoon {
+    font-weight: 500;
+    color: #888B9A;;
+}
+
+/*------ Schedules ------*/
+
+.schedules details {
+    padding: 10px;
+    background: #6684C4;
+    margin: 15px 0;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+}
+
+.schedules details summary {
+    color: #FFF;
+    font-size: 14pt;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.schedules details summary:focus {
+    outline: 0;
+}
+
+.schedules details .content {
+    margin: 10px -10px -10px -10px;
+    padding: 20px;
+    background: #FFF;
+    text-align: center;
+}
+
+.schedules details .content .section {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px 0px;
+    display: inline-block;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 15px;
+    background: #EBEBEB;
+    color: black;
+    text-decoration: none;
+}
+
+.schedules details .content .section h3 {
+    font-size: 12pt;
+    margin: 5px;
+} 
+
+.schedules details .content .section img {
+    width: 50px;
+}
+
+.schedules details .content .section .download {
+    position: absolute;
+    margin: 40px 5px;
+    padding: 10px;
+    background: #EC1C24;
+    border-radius: 15px;
+    color: #FFF;
+    font-size: 10pt;
+    
+}
+
+/*********************
+*       FOOTER
+*********************/
+
+#footer {
+    background: #15151E;
+    color: #8A8A8E;
+    text-align: justify;
+    padding: 25px 100px;
+
+    display: grid;
+    grid-area: footer;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+#footer h3 {
+    color: #FFFFFF;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/*------ Social ------*/
+
+#footer .icon-button {
+    color: #8A8A8E;
+    border: 1px solid #8A8A8E;
+    border-radius: 100px;
+    cursor: pointer;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 10px;
+    position: relative;
+    text-align: center;
+}
+
+#footer .icon-button:hover {
+    background: #8A8A8E;
+    color: #15151E;;
+
+    -webkit-transition: all 0.3s;
+       -moz-transition: all 0.3s;
+         -o-transition: all 0.3s;
+            transition: all 0.3s;
+}
+
+/*------ Links ------*/
+
+#footer ul.links {
+    margin: 0;
+    padding: 0;
+}
+
+#footer ul.links li {
+    list-style: none;
+}
+
+#footer .links li a {
+    border-bottom: 1px solid #333;
+    text-decoration: none;
+    color: rgba(255,255,255,.5);
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+}
+
+#footer .links li a i {
+    font-size: 7pt;
+}
+
+#footer .links a:hover {
+    color: #FFF;
+}
+
+/*------ News ------*/
+
+#footer .news article {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 15px;
+
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+#footer .news article a {
+    color: #8A8A8E;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#footer .news article img {
+    justify-self: right;
+    width: 100px;
+}
+
+#footer .news .info h4 {
+    font-weight: 500;
+    color: #FFF;
+    margin: 0;
+    margin-top: 10px;
+}
+
+#footer .news .info p {
+    margin: 10px;
+    font-size: 11pt;
+}
+
+.copyright {
+    background: #101017;
+    color: #8A8A8E;
+    font-weight: 500;
+    text-align: center;
+    padding: 20px;
+    grid-area: copy;
+}
+
+/*********************
+*       QUERIES  
+*********************/
+
+@media only screen and (max-width: 1024px) {
+    #main .misvis .separator img {
+        width: 100px;
+    }
+
+    #footer {
+        grid-template-columns: 1fr;
+    }
+
+    #footer .social-media {
+        text-align: center;
+    }
+
+    #footer .news article {
+        grid-template-columns: 1fr 3fr;
+    }
+
+    #footer .news article img {
+        justify-self: center;
+        width: 180px;
+    }
+
+    #footer h3 {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #header {
+        padding: 10px 50px;
+        grid-template-columns: 1fr 4fr;
+    }
+
+    #header .logo:before {
+        display: none;
+    }
+
+    #header .tggnav {
+        display: inline-block;
+        justify-self: right;
+    }
+
+    .nav-right, .nav-left {
+        display: none;
+    }
+
+    #banner {
+        height: 200px;
+        padding: 50px;
+    }
+
+    #main .sec {
+        padding: 10px 50px;
+    }
+
+    #main .us {
+        grid-template-columns: 1fr;
+    }
+
+    #main .us img.univf {
+        content: url('../images/univfront2.jpg');
+        display: block;
+        float: none;
+        margin: 0 auto;
+        width: 500px;
+    }
+
+    #main .misvis {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #main .misvis .separator {
+       display: none;
+    }
+
+    .ebook {
+        width: auto;
+        height: auto;
+        grid-template-columns: 1fr;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .ebook:hover {
+        box-shadow: none;
+    }
+    
+    .ebook img {
+        width: 125px;
+    }
+    
+    .ebook p, h3 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .announce {
+        padding: 0 30px;
+        font-size: 10pt;
+        line-height: 45px;
+    }
+
+    #header {
+        padding: 10px 30px;
+    }
+
+    #banner {
+        height: 150px;
+        padding: 50px 50px 25px 50px;
+    }
+
+    #banner h1, #banner hr {
+        display: none;
+    }
+
+    #header .logo img  {
+        width: 55px;
+    }
+
+    .tggnav {
+        font-size: 16pt;
+    }
+
+    #main .sectitle {
+        width: 90%;
+    }
+
+    #main .sectitle p {
+        font-size: 10pt;
+        max-width: 350px;
+    }
+
+    #main .sec {
+        padding: 10px 30px;
+    }
+
+    #main .us img.univf {
+        width: 350px;
+    }
+
+    #main .misvis {
+        grid-template-columns: 1fr;
+    }
+
+    #footer {
+        padding: 25px 30px;
+    }
+
+    #footer .news article {
+        grid-template-columns: 1fr;
+    }
+
+    #footer .news article img {
+        border-radius: 100%;
+        justify-self: center;
+        width: 180px;
+    }
+
+    #footer .news article h4 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .announce {
+        padding: 0 20px;
+        font-size: 9pt;
+        line-height: 45px;
+    }
+
+    #header .logo img  {
+        width: 45px;
+    }
+
+   .tggnav {
+        font-size: 14pt;
+    }
+
+    #main .sec {
+        padding: 10px 20px;
+    }
+
+    #main .us img.univf {
+        content: url('../images/univfront.jpg');
+        width: 250px;
+    }
+
+    #footer .news article img {
+        border-radius: 100%;
+        justify-self: center;
+        width: 140px;
+    }
+}
