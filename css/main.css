@@ -461,7 +461,27 @@ body {
     border-radius: 15px;
     color: #FFF;
     font-size: 10pt;
+}
+
+/*------ Software migration ------*/
+
+#main .migsoft {
+    padding: 25px 200px;
+}
+
+.software-free1 {
+    float: left;
+    border-radius: 10px;
+    width: 180px;
+    margin: 20px 10px 10px 10px;
     
+    
+}
+.software-free2 {
+    float: right;
+    border-radius: 10px;
+    width: 180px;
+    margin: 20px 0px 5px 10px ;
 }
 
 /*********************

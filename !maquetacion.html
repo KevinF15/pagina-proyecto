@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS-Grid</title>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background: #EBEAF3;
+                color: #000;
+                font-family: sans-serif;
+            }
+
+            .container {
+                width: 90%;
+                margin: 20px auto;
+
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, auto);
+                grid-gap: 20px;
+
+                grid-template-areas: "announce announce announce"
+                                     "header header header"
+                                     "banner banner banner"
+                                     "main main main"
+                                     "footer footer footer"
+
+            }
+
+.container > * {
+    background: #FFF;
+    padding: 20px;
+}
+
+.container #announce {
+    background: #E6AC27;
+    color: #FFF;
+    grid-area: announce;
+}
+
+.container header {
+    background: #665744;
+    color: #FFF;
+    grid-area: header;
+}
+
+.container #banner {
+    background: #81BDA4;
+    color: #FFF;
+    grid-area: banner;
+    text-align: center;
+    padding: 50px;
+}
+
+.container main {
+    color: #000;
+    grid-area: main;
+}
+
+.container footer {
+    background: #665744;
+    color: #FFF;
+    grid-area: footer;
+    padding: 50px;
+}
+        </style>
+    <body>
+    </head>
+        <div class="container">
+            <div id="announce">
+                ANNOUNCE
+            </div>
+            <header id="header">
+                <h1>HEADER</h1>
+            </header>
+            <div id="banner">
+                <h1>BANNER</h1>
+                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>             
+            </div>
+            <main id="main">
+                <h1>Contenido</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque a, laboriosam earum odit enim temporibus similique expedita aliquam. Animi quis earum dolor quo harum adipisci velit corrupti perspiciatis reiciendis dicta. Soluta eligendi eius quia nemo praesentium totam, illo voluptas reprehenderit doloremque perspiciatis recusandae? Voluptas reiciendis quis ex itaque ullam, magnam perferendis quidem doloribus, sequi, repellendus recusandae enim commodi magni? Reprehenderit.<br><br>
+                Ullam laudantium animi consequuntur eum eius! Voluptas voluptatibus quasi ullam in excepturi doloremque commodi, dignissimos rerum distinctio ipsum fuga, maxime officia tempora illo numquam! Commodi velit vel autem eveniet unde.<br><br>
+                A, quod. Id libero, rerum, officia animi porro iure fugit reiciendis ipsa hic dignissimos obcaecati velit expedita? Odio similique itaque explicabo commodi, obcaecati tenetur adipisci. Velit dolores voluptatem rem cumque?<br><br>
+                Fuga, distinctio! Eum impedit magnam error maxime asperiores fugit eos quia temporibus iste ad aliquam voluptate alias magni, inventore ipsa obcaecati corporis autem a delectus enim beatae ducimus. Porro, animi?</p>
+            </main>
+            <footer id="footer">
+                <h3>FOOTER</h3>
+            </footer>
+        </div>
+    </body>
+</html>
